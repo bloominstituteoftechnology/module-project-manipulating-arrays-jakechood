@@ -20,7 +20,7 @@
     // ❗ The first challenge is _partially_ done for you:
 
     // 👉 CHALLENGE 1
-    // 🧠 The function sumNumsFor takes an array of supposed numbers and adds them up, returning the total sum.
+    // 🧠 The function sumNumsFor takes an array of supposed numbers...  and adds them up, returning the total sum.
     // 🧠 If the function receives an empty array, the returned value ought to be 0.
     // 🧠 If an element in the array happens to not be a number, it is ignored.
     // 🧠 However, if the number 13 is encountered, sumNumsFor returns the string "I'm too superstitious!"
@@ -30,9 +30,28 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
-    function sumNumsFor(nums) {
 
+
+    // 🧠 The function sumNumsFor takes an array of supposed numbers...
+    function sumNumsFor(nums) {
+      let sum = 0
+      
+      // ...and adds them up, ...
+      for (let index in nums) {
+        let value = nums[index]
+         // 🧠 If the function receives an empty array,  
+        if (nums != undefined) {
+          sum += value
+          // the returned value ought to be 0.
+        } else if (value = undefined) {
+          value = 0
+      } 
+      }
+      
+      // ...returning the total sum.
+      return sum
     }
+    
 
     // 👉 CHALLENGE 2
     // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
