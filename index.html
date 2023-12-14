@@ -31,32 +31,42 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
 
-    <!-- TODO Bless this Mess -->
-    // 🧠 The function sumNumsFor takes an array of supposed numbers...
+
+    // The function sumNumsFor takes an array of supposed numbers...
     function sumNumsFor(nums) {
-      let sum = 0
+
+      // If the function receives an empty array, the returned value ought to be 0.
+      let filteredNums = 0
+
       // ...and adds them up, ...
       for (let index in nums) {
         let element = nums[index]
-        let filteredNums = []
-         // 🧠 If an element in the array happens to not be a number, it is ignored.
-        if (typeof element !== 'number') {
-          filteredNums += element
-          return filteredNums
+
+        // However, if the number 13 is encountered, sumNumsFor returns the string "I'm too superstitious!"
+        if (element === 13) {
+          return("I'm too superstitious!")
         }
-         // 🧠 If the function receives an empty array,  
-        else if (nums != undefined) {
-          sum += element
-          // the returned value ought to be 0.
-        } else if (element = undefined) {
-          element = 0
-        } 
+
+         // If an element in the array happens to not be a number, it is ignored.
+        else if ((typeof element === 'number') && 
+          (element != undefined) &&
+          (element !== 13)) {
+            filteredNums += element
+            }
       }
-      
       // ...returning the total sum.
-      return sum
+      return filteredNums
+
+      
     }
-    
+      // Testing:
+      // sumNumsFor([1, 2, 3]) 
+      // should return 6
+
+      // sumNumsFor([1, 2, 13]) 
+      // should return "I'm too superstitious!"
+
+
 
     // 👉 CHALLENGE 2
     // 🧠 The function stripVowels takes a string, strips all lowcase vowel letters (a,e,i,o,u) from it and returns it.
