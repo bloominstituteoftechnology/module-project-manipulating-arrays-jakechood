@@ -22,7 +22,7 @@
     // 👉 CHALLENGE 1
     // 🧠 The function sumNumsFor takes an array of supposed numbers...  and adds them up, returning the total sum.
     // 🧠 If the function receives an empty array, the returned value ought to be 0.
-    // 🧠 If an element in the array happens to not be a number, it is ignored.
+   
     // 🧠 However, if the number 13 is encountered, sumNumsFor returns the string "I'm too superstitious!"
     // 🧠 Examples of usage:
     // sumNumsFor([1, 2, 3]) // should return 6
@@ -31,21 +31,26 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
 
-
+    <!-- TODO Bless this Mess -->
     // 🧠 The function sumNumsFor takes an array of supposed numbers...
     function sumNumsFor(nums) {
       let sum = 0
-      
       // ...and adds them up, ...
       for (let index in nums) {
-        let value = nums[index]
+        let element = nums[index]
+        let filteredNums = []
+         // 🧠 If an element in the array happens to not be a number, it is ignored.
+        if (typeof element !== 'number') {
+          filteredNums += element
+          return filteredNums
+        }
          // 🧠 If the function receives an empty array,  
-        if (nums != undefined) {
-          sum += value
+        else if (nums != undefined) {
+          sum += element
           // the returned value ought to be 0.
-        } else if (value = undefined) {
-          value = 0
-      } 
+        } else if (element = undefined) {
+          element = 0
+        } 
       }
       
       // ...returning the total sum.
