@@ -74,10 +74,23 @@
     // stripVowels('Lady Gaga') // should return 'Ldy Gg'
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
+
+
+    // 🧠 The function stripVowels takes a string,
     function stripVowels(str) {
-
+      // strips all lowcase vowel letters (a,e,i,o,u) from it
+      let vowels = ['a', 'e', 'i', 'o', 'u']
+      let index = indexOf(str)
+      while (index < str.length) {
+        let letter = str[index]
+        for (let vow in vowels) {
+          if (letter === vow) {
+              str.splice(index, 1, letter)
+            }
+          }
+        return str
+      }
     }
-
     // 👉 CHALLENGE 3
     // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
